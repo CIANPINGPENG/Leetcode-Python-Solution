@@ -1,0 +1,20 @@
+class Solution:
+    def isIsomorphic(self, s: str, t: str) -> bool:
+        maps={}
+        mapt={}
+        ress=""
+        rest=""
+        if len(s)!=len(t):
+            return False
+        else:
+            for i in range(len(s)):
+                maps[s[i]]=t[i]
+                mapt[t[i]]=s[i]
+            for j in s:
+                s1=maps[j]
+                ress+=s1
+            for k in t:
+                t1=mapt[k]
+                rest+=t1
+            if ress==t and rest==s:
+                return True
