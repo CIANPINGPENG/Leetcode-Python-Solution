@@ -9,3 +9,4 @@
 
 
 <a href="https://leetcode.com/problems/running-sum-of-1d-array/submissions/856204198/"> 1480. Running Sum of 1d Array <a>   <a href="https://github.com/CIANPINGPENG/Leetcode-solution/blob/main/Python/1480.%20Running%20Sum%20of%201d%20Array"> Solution <a>
+<a href="https://leetcode.com/problems/isomorphic-strings/description/?envType=study-plan&id=level-1"> 205. Isomorphic Strings <a>   <a href="https://github.com/CIANPINGPENG/Leetcode-solution/blob/main/Python/205.%20Isomorphic%20Strings"> Solution <a>
