@@ -1,0 +1,26 @@
+class Solution:
+    def longestPalindrome(self, s: str) -> int:
+        n=0
+        n_str=[]
+        n_str_i=[]
+        res=0
+
+        sort_s=sorted(s)
+        n_str.append(sort_s[0])
+        n_str_i.append(sort_s.count(sort_s[0]))
+        for i in range(len(sort_s)):
+            if i>0 and sort_s[i]!=sort_s[i-1]:
+                n_str.append(sort_s[i])
+                n_str_i.append(sort_s.count(sort_s[i]))
+        
+        
+        for j in n_str_i:
+            if j%2==0:
+                res+=j
+            else:
+                res+=j-1
+                n+=1
+        if n>0:
+            return res+1
+        else:
+            return res
