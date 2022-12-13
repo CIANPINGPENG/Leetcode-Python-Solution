@@ -15,4 +15,4 @@ Try half
 * <a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/?envType=study-plan&id=level-1"> 121. Best Time to Buy and Sell Stock <a>   <a href="https://github.com/CIANPINGPENG/Leetcode-solution/blob/main/Python/121.%20Best%20Time%20to%20Buy%20and%20Sell%20Stock"> Solution <a> 
   
 <a href="https://leetcode.com/problems/running-sum-of-1d-array/submissions/856204198/"> 1480. Running Sum of 1d Array <a>   <a href="https://github.com/CIANPINGPENG/Leetcode-solution/blob/main/Python/1480.%20Running%20Sum%20of%201d%20Array"> Solution <a>
-  
+<a href="https://leetcode.com/problems/binary-search/description/?envType=study-plan&id=level-1"> 704. Binary Search <a>   <a href="https://github.com/CIANPINGPENG/Leetcode-solution/blob/main/Python/704.%20Binary%20Search"> Solution <a>
