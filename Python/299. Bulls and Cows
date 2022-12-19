@@ -1,0 +1,13 @@
+class Solution:
+    def getHint(self, secret: str, guess: str) -> str:
+        A=0
+        B=0
+        for i in range (len(secret)):
+            if secret[i]==guess[i]:
+                A+=1
+        for j in secret:
+            if j in guess:
+                B+=1
+                guess=guess.replace(j,"",1)
+        res=str(A)+'A'+str(B-A)+'B'
+        return res
