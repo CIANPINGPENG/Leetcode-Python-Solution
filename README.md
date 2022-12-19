@@ -17,7 +17,9 @@ Try half
 <a href="https://leetcode.com/problems/running-sum-of-1d-array/submissions/856204198/"> 1480. Running Sum of 1d Array <a>   <a href="https://github.com/CIANPINGPENG/Leetcode-solution/blob/main/Python/1480.%20Running%20Sum%20of%201d%20Array"> Solution <a>
   
 <a href="https://leetcode.com/problems/binary-search/description/?envType=study-plan&id=level-1"> 704. Binary Search <a>   <a href="https://github.com/CIANPINGPENG/Leetcode-solution/blob/main/Python/704.%20Binary%20Search"> Solution <a>
-  
+
+<a href="https://leetcode.com/problems/bulls-and-cows/description/?envType=study-plan&id=level-1"> 299. Bulls and Cows <a>   <a href="https://github.com/CIANPINGPENG/Leetcode-solution/blob/main/Python/299.%20Bulls%20and%20Cows"> Solution <a>
+
 <a href="https://leetcode.com/problems/climbing-stairs/description/?envType=study-plan&id=level-1"> 70. Climbing Stairs
  <a>   <a href="https://github.com/CIANPINGPENG/Leetcode-solution/blob/main/Python/70.%20Climbing%20Stairs"> Solution <a>
    
