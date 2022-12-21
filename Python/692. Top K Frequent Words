@@ -1,0 +1,11 @@
+class Solution:
+    def topKFrequent(self, words: List[str], k: int) -> List[str]:
+        words.sort()
+        nums=collections.Counter(words)
+        new=nums.most_common()
+        res=[]
+        for i,w in enumerate(new):
+            if i < k:
+                res.append(w[0])
+  
+        return res
