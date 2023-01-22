@@ -1,0 +1,21 @@
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        new_s = ""
+        for i in s:
+            if i.isalnum() == True :
+                new_s += i
+        
+        if len(new_s) <= 1:
+            return True
+
+        lower_s = new_s.lower()
+        mid = len(lower_s) // 2
+        if len(lower_s) % 2 == 0:
+            first_s = lower_s[:mid]
+            next_s = lower_s[mid:len(lower_s)]
+        else:    
+            first_s = lower_s[:mid]
+            next_s = lower_s[mid+1:len(lower_s)]
+        
+        if first_s == next_s[::-1]:
+            return True
