@@ -7,6 +7,7 @@ I used a stack to avoid string modification.
 When writing a character in the stack by iterate, we need to consider if there are backspace keystrokes after the character.
 If there is a backspace keystroke, it shouldn't be written in the stack and one character in the stack should be removed if the stack is not empty.   
 
+```ruby
 class Solution:
     def backspaceCompare(self, s: str, t: str) -> bool:
         new_s = []
@@ -25,6 +26,7 @@ class Solution:
 
         if new_s == new_t:
             return True
+```
 
 **Time Complexity:** O(m + n)
 
