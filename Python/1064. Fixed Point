@@ -1,0 +1,26 @@
+**Intuition:**
+The intuition is to use a linear search algorithm to check if the current index is equal to the current value.
+The reason why we can use a linear search is because the input array is sorted in ascending and contains distinct integers. 
+If there is such an index, we return it. 
+If search finishes without finding any such value, we return -1. 
+
+**Algorithm:**
+The iterates over each element in the input array using the enumerate function, which returns both the index and the value of the current element.
+Then, I compared if the current index is equal to the current value.
+If there was such an index, the function returned it.
+Otherwise, if the loop finishes without finding anysuch value, the function returned -1.
+
+```
+class Solution:
+    def fixedPoint(self, arr: List[int]) -> int:
+        for i, num in enumerate(arr):
+            if i == num:
+                return i
+        return -1
+```
+
+**Time Complexity:** O(n)
+The solution only needs to iterate over the array once.
+
+**Space Complexity:** O(1)
+The solution uses only constant additional space. 
