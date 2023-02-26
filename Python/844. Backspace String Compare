@@ -1,4 +1,4 @@
-**Intuition:
+**Intuition:**
 The intuition is to build the result of each string as a stack or a string.
 Then, I compare them if they are equal.
 
