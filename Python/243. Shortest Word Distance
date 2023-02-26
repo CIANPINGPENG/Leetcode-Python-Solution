@@ -31,7 +31,7 @@ class Solution:
 
 **Time Complexity:** O(n^2)
 
-**Space Complexity:** O(1)
+**Space Complexity:** O(n)
 
 **Improvement:**
 Use Two Pointer approach to improve time complexity to O(n)
