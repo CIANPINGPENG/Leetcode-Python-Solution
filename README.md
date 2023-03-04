@@ -1,6 +1,7 @@
 **$${Leetcode-Python-Solution}$$**
   
 - [x] <a href="https://leetcode.com/problems/running-sum-of-1d-array/submissions/856204198/"> **1480. Running Sum of 1d Array** <a>   <a href="https://github.com/CIANPINGPENG/Leetcode-solution/blob/main/Python/1480.%20Running%20Sum%20of%201d%20Array"> Solution <a>  
+- [x] <a href="https://leetcode.com/problems/how-many-apples-can-you-put-into-the-basket/description/"> **1196. How Many Apples Can You Put into the Basket** <a>   <a href="https://github.com/CIANPINGPENG/Leetcode-Python-Solution/blob/main/Python/1196.%20How%20Many%20Apples%20Can%20You%20Put%20into%20the%20Basket"> Solution <a> 
 - [x] <a href="https://leetcode.com/problems/fixed-point/description/"> **1064. Fixed Point** <a>   <a href="https://github.com/CIANPINGPENG/Leetcode-Python-Solution/blob/main/Python/1064.%20Fixed%20Point"> Solution <a> 
 - [ ] <a href="https://leetcode.com/problems/last-stone-weight/description/"> **1046. Last Stone Weight** <a>   <a href="https://github.com/CIANPINGPENG/Leetcode-Python-Solution/blob/main/Python/1046.%20Last%20Stone%20Weight"> Solution <a> 
 - [ ] <a href="https://leetcode.com/problems/backspace-string-compare/solutions/?orderBy=most_votes"> **844. Backspace String Compare** <a>   <a href="https://github.com/CIANPINGPENG/Leetcode-Python-Solution/blob/main/Python/844.%20Backspace%20String%20Compare"> Solution <a>  ```Third time```
