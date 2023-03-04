@@ -1,0 +1,40 @@
+**Intuition:**
+The intuition is to add weights one by one in the ascending order until the total weight exceeds the maximum weight limit.
+
+**Algorithm:**
+The problem was solved by greedy approach.
+1. Sort the given array of weights in non-decreasing order.
+   This way ensures that I always pick the lightest one first, which maximizes the number of items.
+   If I were to pick heavier one first, I might end up smaller number of items, even though the total weight is closer to the weight limit.
+2. Initialize valuables sum and n.
+   sum : To keep track of the total weight
+   n : To keep track of the total items
+3. Loop through the sorted array and add weight one by one.
+4. If the current weight doesn't exceed the limit, add it to the sum and increment the number of items by 1.
+5. If the total weight exceeeds the maximum weight limit each time, 
+   return n - 1 because I need to subtract the one I add and makes the total weight exceeds the limit.
+   Then, break the loop.
+6. If all weights have been added and the maximum weight limit has not been reached,
+   return the total number of items, which is n.
+
+```
+class Solution:
+    def maxNumberOfApples(self, weight: List[int]) -> int:
+        weight.sort(reverse=False)
+
+        sum = 0
+        n = 0
+        for i in weight:
+            sum += i
+            n += 1
+            if sum > 5000:
+                return n-1
+                break
+        return n
+```
+
+**Time Complexity:** O(nlogn)
+The solution needs to sort the input array before applying the greedy strategy, which takes O(nlogn) time complexity.
+
+**Space Complexity:** O(1)
+The solution uses only constant additional space. 
