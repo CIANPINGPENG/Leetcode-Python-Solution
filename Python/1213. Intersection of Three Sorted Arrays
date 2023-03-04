@@ -1,0 +1,87 @@
+[Option 1] Time complexity is slower
+
+**Intuition:**
+The intuition is to find the common elements in the three input arrays.
+Because arrays sort in strinctly increasing order, we don't need to consider the repetitive element within one array.
+
+**Algorithm:**
+1. Create two empty lists.
+   One is for the common element from arr1 and arr2.
+   Another one is for the coomon element from the first list I create and arr3.
+2. Iterate over arr1 and arr2 using two nesting loop.
+   I check each element in arr1 if it's equal to any element in arr2.
+   If there is a match, I add the element to the first empty lists.
+   Otherwise, I ignore it.
+3. Iterate over the first list I create and arr3 using two nesting loop.
+   I check each element in the first list if it's equal to any element in arr3.
+   If there is a match, I add the element to the second empty lists.
+   Otherwise, I ignore it.
+4. Return the second list which contains all the elements existing in all three input arrays.
+
+```
+class Solution:
+    def arraysIntersection(self, arr1: List[int], arr2: List[int], arr3: List[int]) -> List[int]:
+        
+        new_list_1 = []
+        new_list_2 = []
+        for i in arr1:
+            for j in arr2:
+                if i == j:
+                    new_list_1.append(i)
+        for k in new_list_1:
+            for l in arr3:
+                if k == l:
+                    new_list_2.append(k)
+        return new_list_2      
+```
+
+**Time Complexity:** O(n^3)
+The solution iterates over all elements of the three arrays to find the common elements.
+
+**Space Complexity:** O(n)
+The solution creates a new list that can store at most the number of elements in arr1. 
+
+
+
+
+[Option 2] Optimize time complexity and Beat 98.77%
+
+**Intuition:**
+The intuition is to find the intersection of the three given arrays.
+Therefore, we can use a dictionary store the elements in arr1 and increment the count for the common elements from arr2.
+Then, we look for the common elements from arr3 and the occurency is more than 2 in the dictionary, which means the element exists in arr1 and arr2.
+After that, we add them to the result list.
+Because arrays sort in strinctly increasing order, we don't need to consider the repetitive element within one array.
+
+**Algorithm:**
+1. Create am empty dictionary to store the elements from arr1 and keep track of the occurency.
+2. Create a result list to store the common elements from all three arrays.
+3. Iterate over arr1 and set the value of all the elements to 1 in the dictionary.
+4. Iterate over arr2. If there are any elements showing in the dictionary, increment the value by 1.
+   Otherwise, I ignore it.
+5. Iterate over arr3. If there are any elements showing in the dictionary and the value is 2, add it to the result list.
+   Otherwise, I ignore it.
+5. Return the result list which contains all the elements existing in all three input arrays.
+
+```
+class Solution:
+    def arraysIntersection(self, arr1: List[int], arr2: List[int], arr3: List[int]) -> List[int]:
+        
+        counter = {}
+        res = []
+        for i in arr1:
+            counter[i]=1
+        for j in arr2:
+            if j in counter:
+                counter[j]+=1
+        for k in arr3:
+            if k in counter and counter[k] == 2:
+                res.append(k)
+        return res 
+```
+
+**Time Complexity:** O(n)
+The solution iterates over each element in the three arrays at most once and perform constant time operations within each iteration.
+
+**Space Complexity:** O(n)
+The solution creates a new dictionary that can store at most the number of elements in arr1. 
