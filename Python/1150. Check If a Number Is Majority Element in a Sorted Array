@@ -1,0 +1,54 @@
+**Intuition:**
+The intuition is to count the occurrences of each element in the array.
+Then, we check if the most occurring element is same as the target and if the count of the target element is greater than half length of the array. 
+If there is such an index, we return True. 
+
+**Algorithm:**
+I initialized variables n, max, max_num to 0 and an empty set called sets to keep track of seen elements.
+  - n: to calculate the occurrences of each element
+  - max: to store the maximum occurrences
+  - max_num: to store the element with the highest occurrences 
+I checked if the length of array is 1.
+If so, I checked if the only element is the target.
+If it is, return True.
+If the length of array is more than one, I iterated through the elements in the array.
+If the current element is in sets, I incremented n by 1 and check if n is the highest number.
+If n is higher than max, update max to n and max_num to i.
+If the current element is not in sets, reset n to 0 and add i to sets.
+Then, I checked if the max_num is equal to the target and if the max + 1 is greater than the half length of the array.
+If both conditions are True, return True.
+Otherwise, return False.
+
+```
+class Solution:
+    def isMajorityElement(self, nums: List[int], target: int) -> bool:
+
+        n = 0
+        max = 0
+        max_num = 0
+        sets = set()
+        if len(nums) == 1:
+            if nums[0] == target:
+                return True
+
+        for i in nums:
+            if i in sets:
+                n += 1
+                if n > max:
+                    max = n
+                    max_num = i
+            else:
+                n = 0
+                sets.add(i)
+        if max_num == target and max+1>len(nums)//2:
+            return True
+```
+
+**Time Complexity:** O(n)
+The solution only needs to iterate over the array once
+
+**Space Complexity:** O(n)
+The solution uses a set to keep track of the elements seen so far
+
+**Improvement:**
+Only need to identify the element which is same as the target and make the space complexity to O(1)
