@@ -1,0 +1,38 @@
+**Intuition:**
+The intuition is to find the minimum gap between any two adjacent numbers.
+Then, check where the gap exists and return the missing number.
+
+**Algorithm:**
+1. Sort the input array in ascending order using the SORT method.
+2. Initialize the gap valuable as positive infinity.
+3. Iterate over the sorted array using a for loop to find the minimum gap by checking the difference between the current element and the next element.
+   If the difference is less than gap, update gap with the new difference.
+4. Initialize n variable as 0 to keep track of the index of the last element in the input array.
+5. While n is less than the length of arr minus 1 and the difference between the current element and the next element is equal to the gap, increment n by 1.
+6. Return the missing number, which is the sum of the gap and the n th element in the array.
+
+```
+class Solution:
+    def missingNumber(self, arr: List[int]) -> int:
+        arr.sort(reverse = False)        
+        
+        gap = float('inf')
+        for i in range(len(arr)):
+            if i < len(arr)-1 and arr[i+1]-arr[i] < gap:
+                gap = arr[i+1]-arr[i]
+
+        n = 0
+        while n < len(arr)-1 and arr[n+1] == arr[n] + gap:
+            n += 1
+        res = arr[n] + gap
+        return res      
+```
+
+**Time Complexity:** O(nlogn)
+The solution used the SORT method.
+
+**Space Complexity:** O(1)
+The solution used only a constant amount of additional memory to store variables, such as gap, n and res. 
+
+**Improvement:**
+Make the time complexity to be O(n)
