@@ -36,6 +36,3 @@ The solution has a time complexity of O(n) for iterating through the input list 
 
 **Space Complexity:** O(1)
 The solution uses only constant additional space. 
-
-**Improvement:**
-Improve it by using the two-pointer approach.
