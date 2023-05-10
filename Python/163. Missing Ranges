@@ -1,0 +1,41 @@
+**Intuition:**
+The problem aims to find missing ranges in a given list of integers between a given lower and upper bound.
+The intuition is to iterate through the list and check if there are any missing ranges between the consecutive integers.
+
+**Algorithm:**
+1. Initialize an empty list to store the missing ranges.
+2. If the input list is empty, return a list containing the lower and upper bounds as a missing range.
+3. Iterate through the input list, starting with the first element:
+    a. If the first element is not equal to the lower bound, append the missing range between the lower bound and the first element to the result list.
+    b. If there is a gap between the current element and the previous element, append the missing range to the result list.
+    c. If it is the last element of the input list and not equal to the upper bound, append the missing range between the last element and the upper bound to the result list.
+4. Return the result list.
+
+```
+class Solution:
+    def findMissingRanges(self, nums: List[int], lower: int, upper: int) -> List[str]:
+        
+        res = []
+        if len(nums) == 0:
+            res.append([lower, upper])
+
+        for i in range(len(nums)):
+            if i == 0 and nums[i] != lower:
+                res.append([lower,nums[i]-1])           
+            elif nums[i] - lower > 1:
+                res.append([lower+1,nums[i]-1])
+            if i == len(nums)-1 and nums[i] != upper:
+                res.append([nums[i]+1,upper]) 
+            lower = nums[i]
+
+        return res
+```
+
+**Time Complexity:** O(n)
+The solution has a time complexity of O(n) for iterating through the input list once.
+
+**Space Complexity:** O(1)
+The solution uses only constant additional space. 
+
+**Improvement:**
+Improve it by using the two-pointer approach.
