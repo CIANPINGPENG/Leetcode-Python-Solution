@@ -1,0 +1,27 @@
+**Intuition:**
+The problem aims to determine whether a person can attend all scheduled meetings without any time conflicts.
+The intuition is to sort the intervals based on the start times. 
+If the end time of one interval is greater than the start time of the next interval, it means there is a time conflict, and the person cannot attend all meetings.
+
+**Algorithm:**
+1. Sort the intervals in ascending order based on their start times.
+2. Iterate through the sorted intervals from the first interval to the second-to-last interval. (To avoid beyond the valid range error)
+3. For each, pair of consecutive intervals, check if the end time of the current interval is greater than the start time of the next interval.
+   If so, return False. (Indicating a time conflict)
+4. If no overlaps are found, return True.
+
+```
+class Solution:
+    def canAttendMeetings(self, intervals: List[List[int]]) -> bool:
+        intervals.sort()
+        for i in range(len(intervals)-1):
+            if intervals[i][1] > intervals[i+1][0]:
+                return False
+        return True
+```
+
+**Time Complexity:** O(n logn)
+The solution has a time complexity of O(n logn) for sorting the intervals.
+
+**Space Complexity:** O(1)
+The solution uses only constant additional space. 
