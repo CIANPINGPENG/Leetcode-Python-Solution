@@ -1,0 +1,35 @@
+**Intuition:**
+The problem aims to check whether a given list of words forms a valid word square.
+A word square is a square arrangement of words such that the words read horizontally and vertically are the same.
+The intuition is to construct the transpose of the given word list and check if it matches the original list.
+
+**Algorithm:**
+1. Initialize an empty list "transpose" to store the transposed words.
+2. Iterate over the indices "i" from 0 to the length of the input "words".
+3. for each "i", initialize an empty string "words_trans" to construct the transposed word.
+4. Iterate over the indices "j" from 0 to the length of the word at index "i" in "words".
+5. Check if both "j" and "i" are within the bounds of the indices of "words". If so, append the character at "words[j][i]" to "word_trans".
+6. Append "word_trans" to the "transpose" list.
+7. Check if "transpose" is equal to "words". If so, return "True".
+
+```
+class Solution:
+    def validWordSquare(self, words: List[str]) -> bool:
+        transpose = []
+        for i in range(len(words)):
+            words_trans = "" 
+            for j in range(len(words[i])):
+                print(1, i, j)
+                if j < len(words) and i < len(words[j]):
+                    print(2, i, j)
+                    words_trans += words[j][i]
+            transpose.append(words_trans)
+        if transpose == words:
+            return True
+```
+
+**Time Complexity:** O(n^2)
+The solution has a time complexity of O(n^2) for nested loops over the number of words and characters in the input.
+
+**Space Complexity:** O(n)
+The solution uses additional space to store the transposed words in the "transpose" list. 
