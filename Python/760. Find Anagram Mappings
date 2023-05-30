@@ -1,0 +1,34 @@
+**Intuition:**
+The intuition is to find the index of each element from nums1 and nums2.
+The indices are then added to a result list and returned.
+
+**Algorithm:**
+1. Initialize an empty list to store the indices.
+2. Iterate through the nums1 list, starting with the first element:
+    a. Use the index method to find the index of nums1 in nums2.
+    b. Append the index to the empty list.
+4. Return the result list.
+
+```
+class Solution:
+    def anagramMappings(self, nums1: List[int], nums2: List[int]) -> List[int]:
+        
+        res=[]
+        for i in nums1:
+            index = nums2.index(i)
+            res.append(index)
+        return res
+```
+
+**Time Complexity:** O(n*m)
+The solution has a time complexity of O(n) for iterating through the nums1 list.
+In each iteration of the loop, the index method is used to search for the element in nums2, which has a time complexity of O(m).
+Overall, it's O(n*m) 
+
+**Space Complexity:** O(n)
+The solution uses additional space to store the indices.
+
+**Improvement:**
+This implementation has a high time complexity because it uses the index method for each method, which involves searching the entire nums2 list.
+To improve the performance, I could consider using dictionary.
+This approach reduces the search time from O(n*m) to O(n+m) because dictionary lookups have constant time complexity on average.
