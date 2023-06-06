@@ -1,0 +1,46 @@
+**Intuition:**
+The intuition is to find the maximum sum of two numbers from the given list that is less than the target value.
+To achieve this, the function sorts the list in ascending order and uses two pointers to traverse the list from both ends.
+
+**Algorithm:**
+1. Sort the list in ascending order.
+2. Initialize variables num1 to 0 (representing the start of the list) and num2 to len(nums)-1 (represnting the end of the list).
+3. Initialize variables max_val to a value that is guaranteed to be smaller than any possible sum of two numbers in the list.
+4. Use a while loop to iterate until num1 is less than num2:
+   a. Calculate the sum of the numbers at indices num1 and num2 and store it in sum_val.
+   b. If sum_val is greater than or equal to k, devrement num2 to move to a smaller number and continue to the next iteration.
+   c. If sum_val is less than k, compare it with max_val. If it is greater, update max_val to sum_val.
+   d. Increment num1 to move to the next number in the list.
+5. After the while loop, check if max_val is still equal to the initial value. If it is, no pair of numbers was found whose sum is less than k, so return -1.
+   Otherwise, return max_val.
+
+```
+class Solution:
+    def twoSumLessThanK(self, nums: List[int], k: int) -> int:
+        nums.sort()
+        num1 = 0
+        num2 = len(nums)-1
+        max_val = -100
+        while num1 < num2:
+            sum_val = nums[num1] + nums[num2]
+            if sum_val >= k:
+                num2 -= 1
+            else:
+                if sum_val > max_val:
+                    max_val = sum_val
+                num1 += 1
+                
+        if max_val == -100:
+            return -1
+        else:
+            return max_val
+```
+
+**Time Complexity:** O(n log n)
+The solution has a time complexity of O(n log n) for the sorting operation and the subsequent traversal of the list using two pointers takes linear time (O(n)).
+
+**Space Complexity:** O(1)
+The solution uses only constant additional space. 
+
+**Improvement:**
+Consider adding a check at the beginning of the function to handle the case where the list has fewer than two elements.
