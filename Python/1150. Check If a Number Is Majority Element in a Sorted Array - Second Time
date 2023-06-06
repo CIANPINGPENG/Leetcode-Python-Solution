@@ -1,0 +1,29 @@
+**Intuition:**
+The intuition is to count the occurrences of each element in the array.
+Then, we check if the most occurring element is same as the target and if the count of the target element is greater than half length of the array. 
+If there is such an index, we return True. 
+
+**Algorithm:**
+1. Use the Counter function to count the frequency of each element in the array.
+2. Iterate overe the items in the counter object using the items() method, which returns a tuple containing the element and its count.
+3. For each item, check if the element is equal to the target value and if its count is greater than half of the length of the array.
+   If both conditions are satisfied, return True to indicate that the target value is a majority element.
+4. If the loop completes without finding a majority element, return False.
+
+```
+class Solution:
+    def isMajorityElement(self, nums: List[int], target: int) -> bool:
+        count_nums = Counter(nums)
+        for val, count in count_nums.items():
+            if val == target and count > len(nums)/2:
+                return True
+```
+
+**Time Complexity:** O(n)
+The solution only needs to iterate over the array once
+
+**Space Complexity:** O(n)
+The solution uses the counter object which requires additional space to store the counts of each element in the array.
+
+**Improvement:**
+Only need to identify the element which is same as the target and make the space complexity to O(1)
