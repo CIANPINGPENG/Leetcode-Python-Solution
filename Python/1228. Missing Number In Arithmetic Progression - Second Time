@@ -1,0 +1,30 @@
+**Intuition:**
+The intuition is to find the minimum gap between any two adjacent numbers.
+Then, check where the gap exists and return the missing number.
+
+**Algorithm:**
+1. Calculate the gap by subtracting the first element in the array from the last element and dividing it by the length of the array.
+2. Iterate over the array using a for loop to check if the difference between the current element and the next element is equal to the gap.
+   If the difference is different from the gap, return the missing number which is the current element add the gap.
+3. If the loop completes without finding a missing number, return the last element in the array.
+
+```
+class Solution:
+    def missingNumber(self, arr: List[int]) -> int:
+        gap = (arr[-1]-arr[0])/len(arr)
+
+        for i in range(len(arr)):
+            if i < len(arr)-1 and arr[i+1] != arr[i]+gap:
+                return int(arr[i]+gap)
+            elif i == len(arr)-1:
+                return arr[i]
+```
+
+**Time Complexity:** O(n)
+The solution iterates through the entire array once.
+
+**Space Complexity:** O(1)
+The solution used only a constant amount of additional memory to store variables, such as gap. 
+
+**Improvement:**
+Make the time complexity to be O(log n)
