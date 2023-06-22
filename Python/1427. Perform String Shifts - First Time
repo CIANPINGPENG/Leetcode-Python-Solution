@@ -1,0 +1,47 @@
+**Intuition:**
+The intuition is to shift characters in a string based on the provided shift values.
+I iterates over each character in th input string and applies the shifts sepecified in the list.
+It keeps track of the updated positions of each character and then sorts them based on their positions to obtain the final shifted string.
+
+**Algorithm:**
+1. Initialize an empty list to store the updated positions and characters.
+2. Iterate over each character and its corresponding index in the string.
+3. For each shift in the list, update the index by subtracting or adding the shift amount based on the shift direction.
+4. Adjust the index to stay within the bounds of the string using modulo operations.
+5. Append the updated index and the corresponding character to the new list.
+6. Sort the new list based on the indices.
+7. Iterate over the sorted list and concatenate the characters to form the final result string.
+8. Return the final result string.
+
+```
+        new=[]
+        res=""
+        for num, val in enumerate(s):
+            for j in range(len(shift)):
+                if shift[j][0] == 0:
+                    num -= shift[j][1]
+                else:
+                    num += shift[j][1]
+            while num > len(s) - 1 or num < 0:
+                if num > len(s) - 1:
+                    num -= len(s)
+                elif num < 0:
+                    num += len(s)
+            new.append([num, val])
+        new.sort()
+        for k in range(len(new)):
+            res+=new[k][1]
+        return res
+```
+
+**Time Complexity:** O(nmlog(n))
+The solution has a time complexity of O(nmlog(n)). 
+O(n) is the length of the input string.
+O(m) is the number of shifts in the list.
+The sorting operation on the list takes O(log(n)) time.
+
+**Space Complexity:** O(n)
+The solution uses a list to store the updated positions and characters for each character. 
+
+**Improvement:**
+Calculating the total net shift amount and applying it to the string in a single step.
