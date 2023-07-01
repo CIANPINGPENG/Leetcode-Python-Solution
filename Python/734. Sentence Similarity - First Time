@@ -1,0 +1,41 @@
+**Intuition:**
+The intuition is to determine if two sentences are similar based on a given list of similar word pairs.
+
+**Algorithm:**
+1. Check if sentence1 is equal to sentence2 and similarPairs is an empty list. 
+   If both conditions are true, return True.
+2. Check if the lengths of sentence1 and sentence2 are not equal. 
+   If they are not equal, return False.
+3. Iterate through each index in the range from 0 to the length of sentence1:
+   a. Initialize empty list res1 and res2.
+   b. If sentence1 is not equal to sentence2, add the pair to both empty lists in different order.
+      Then, check if either list is not present in the similarPairs. If neither pair is found, return False.
+4. If the loop completes without returning False, return True.
+
+```
+class Solution:
+    def areSentencesSimilar(self, sentence1: List[str], sentence2: List[str], similarPairs: List[List[str]]) -> bool:
+        if sentence1 == sentence2 and similarPairs == []:
+            return True
+        if len(sentence1) != len(sentence2):
+            return False
+        
+        for i in range(len(sentence1)):
+            res1 = []
+            res2 = []
+            if sentence1[i] != sentence2[i]:
+                res1.append([sentence1[i],sentence2[i]])
+                res2.append([sentence2[i],sentence1[i]])        
+                if res1[0] not in similarPairs and res2[0] not in similarPairs :
+                    return False
+        return True
+```
+
+**Time Complexity:** O(n)
+The solution has a time complexity of O(n) for iterating through each word in the sentences once.
+
+**Space Complexity:** O(1)
+The solution uses only constant additional space as they are initialized inside the loop and contain at most one element. 
+
+**Improvement:**
+Consider using a dictionary to store the pairs, the lookup time could be reduced to constant time.
