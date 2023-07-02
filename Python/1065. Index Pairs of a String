@@ -1,0 +1,39 @@
+**Intuition:**
+The intuition is to be searching for occurrences of words in a given text and returning the starting and ending indices of each occurrence. 
+
+**Algorithm:**
+1. Initialize an empty list.
+2. Iterate over the words using a for loop.
+3. Initialize variables index and end_index to 0.
+4. Use a while loop to find occurrences of the current word in the text:
+5. Check if the substring from index to end_index matches the current word.
+6. If there is a match, add the starting and ending indices to the list.
+7. Increment index by 1 to continue searching for the word.
+8. Sort the list based on the starting indices.
+9. Return the sorted list.
+
+```
+class Solution:
+    def indexPairs(self, text: str, words: List[str]) -> List[List[int]]:
+        
+        res=[]
+        for i in range(len(words)):
+            index=0
+            end_index=0
+            while end_index < len(text):
+                end_index = index+len(words[i])
+                if text[index:end_index] == words[i]:
+                    res.append([index,end_index-1])
+                index += 1
+        res.sort()
+        return res 
+```
+
+**Time Complexity:** O(n*m*k)
+The solution has a time complexity of O(n*m*k) for the average length of the words, the number of words and the length of the text.
+
+**Space Complexity:** O(n)
+The solution uses additional space to store the number of occurrences of words in the text. 
+
+**Improvement:**
+The code has a time complexity, which can be improved by using more efficient string search algorithms.
