@@ -1,0 +1,36 @@
+**Intuition:**
+The intuition is to find all the starting and ending indices of words from the given list of wordsthat appear in the givien text string.
+
+**Algorithm:**
+1. Create an empty list to store the index pairs.
+2. Iterate over each word in the list of words.
+3. Get the length of the current word.
+4. Iterate over each index in the text string.
+5. Check if the substring of the text is equal to the current word.
+   If it is equal, append the pair to the empty list.
+6. Sort the list to ensure the index pairs are in ascending order.
+7. Return the list containging the index pairs.
+
+```
+class Solution:
+    def indexPairs(self, text: str, words: List[str]) -> List[List[int]]:
+        
+        res=[]
+        for i in words:
+            length = len(i)
+            for j in range(len(text)):
+                if text[j:j+length] == i:
+                    res.append([j,j+length-1])
+        res.sort()
+        return res   
+```
+
+**Time Complexity:** O(nmlog(nm))
+The solution has a time complexity of O(nm) for both iterations over the lendth of the text and the average length of the words.
+Sorting the list takes log(nm).
+
+**Space Complexity:** O(n)
+The solution uses a list to store all pairs. 
+
+**Improvement:**
+Use a more efficient string searching algorithm like KMP or the Boyer-Moore algorithm to reduce the overall time complexity to O(n+m).
